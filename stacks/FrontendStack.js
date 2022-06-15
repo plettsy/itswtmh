@@ -10,14 +10,14 @@ export function FrontendStack({ stack, app }) {
 
   // Define our React app
   const site = new ReactStaticSite(stack, "ReactSite", {
-    path: "frontend",
-    customDomain:
+     customDomain:
       app.stage === "prod"
         ? {
             domainName: "itswtmh.com",
             domainAlias: "www.itswtmh.com",
           }
         : undefined,
+    path: "frontend",
     // Pass in our environment variables
     environment: {
       REACT_APP_API_URL: api.customDomainUrl || api.url,
