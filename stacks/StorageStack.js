@@ -13,12 +13,12 @@ export function StorageStack({ stack, app }) {
     ],
   });
   // Create the DynamoDB table
-  const table = new Table(stack, "Notes", {
+  const table = new Table(stack, "Tracks", {
     fields: {
       userId: "string",
-      noteId: "string",
+      trackId: "string",
     },
-    primaryIndex: { partitionKey: "userId", sortKey: "noteId" },
+    primaryIndex: { partitionKey: "userId", sortKey: "trackId" },
   });
 
   return {
